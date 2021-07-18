@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 1%; font-size: 1.2rem; text-align: center;">
+    <a class="navbar-brand" href="/home" style="font-size: 1.5rem;">Covid Blogs</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/posts/<%= user._id %>/myposts">My Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link active" href="/posts/<%= user._id %>/new">Create New</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/user/<%= user._id %>/<%= user._id %>/profile">My profile</a>
+            </li>
+            </ul>
+
+        
+
+      </div>
+    </div>
+  </nav>
+<div class="container mt-5">
+    <h1>Create New Post</h1>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/posts/<%= user._id %>/new" method="POST">
+                        <div class="form-group">
+                            <label for="text">Title</label>
+                            <input type="text" class="form-control" name="title" placeholder="Must contain the words 'covid' or 'corona'" required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea3">Post</label>
+                            <textarea name="body" class="form-control" id="exampleFormControlTextarea3" rows="7" required></textarea>
+                        </div>
+                        <br>
+                        <!-- <div class="form-group">
+                            <label for="text">Author Name</label>
+                            <input type="text" class="form-control" name="author" required>
+                        </div> -->
+                        <br>
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <%- include('partials/footer') %>

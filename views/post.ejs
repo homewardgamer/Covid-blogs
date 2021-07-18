@@ -1,0 +1,73 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 1%; font-size: 1.2rem; text-align: center;">
+    <a class="navbar-brand" href="/home" style="font-size: 1.5rem;">Covid Blogs</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/posts/<%= userid %>/myposts">My Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/posts/<%= userid %>/new">Create New</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="/user/<%= userid %>/<%= userid %>/profile">My profile</a>
+            </li>
+            </ul>
+
+        
+
+      </div>
+    </div>
+  </nav>
+
+
+<h1 style="margin: 3%; font-size: 4rem;">Post
+    <hr>
+</h1>
+
+
+
+<div class="jumbotron" style="margin: 5%;">
+    <h1 class="display-5"><%= post.title %> </h1>
+    <p class="lead"><%= post.body %> </p>
+    <hr class="my-5">
+    <p>By - <%= post.author %> </p>
+    <p>Posted on <%= post.date %> </p>
+    <p>Likes : <%= post.likes %> </p>
+    <form action="/posts/<%= post._id %>/<%= userid%>/like" method="post">
+        <button type="submmit" class="btn btn-primary">Like</button>
+    </form>
+    <br><br>
+    <div class="col-lg-4" style="margin-left: 0%;">
+        <form action="/posts/<%= post._id %>/<%= userid %>/comment" method="post">
+            <input type="text" class="form-control" name="comment" placeholder="Write your comment" required>
+            <br>
+            <button type="submmit" class="btn btn-primary">Comment</button>
+        </form>
+    </div>
+    <br><br>
+    <h3>Comments (<%=post.comments.length%>) </h3>
+    <ul class="list-group list-group-flush">
+        <% post.comments.forEach(comment=>{ %>
+        <li class="list-group-item">
+            <h5> <%=comment.body %></h5>
+            <p>Date - <%= comment.date %> </p>
+        </li>
+
+        <%}) %>
+    </ul>
+</div>
+
+
+
+
+
+<%- include('partials/footer') %>
