@@ -1,33 +1,30 @@
 <%- include('partials/header') %>
 
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 1%; font-size: 1.2rem; text-align: center;">
-    <a class="navbar-brand" href="#" style="font-size: 1.5rem;">Covid Blogs</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Covid Blogs</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-item nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-item nav-link" href="/posts/<%= user._id %>/myposts">My Posts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-item nav-link" href="/posts/<%= user._id %>/new">Create New</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-item nav-link" href="/user/<%= user._id %>/<%= user._id %>/profile">My profile</a>
-          </li>
-            </ul>
-
-        
-
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-item nav-link" href="/posts/<%= user._id %>/myposts">My Posts</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-item nav-link" href="/posts/<%= user._id %>/new">Create New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-item nav-link" href="/user/<%= user._id %>/<%= user._id %>/profile">My profile</a>
+    </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
 <h1 style="margin: 3%; align-self: center; text-align: center;"> Posts <hr></h1>
 <div style="margin: 1%; text-align: center;">
   <div class="dropdown">

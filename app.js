@@ -331,9 +331,12 @@ app.get("/posts/:userid/new", async (req, res) => {
                 }
             }
         );
-        res.render("new", {
-            user: usr,
-        });
+        setTimeout(() => {
+            res.render("new", {
+                user: usr,
+            });
+        }, 500);
+
     } else {
         res.redirect("/login");
     }
@@ -388,7 +391,7 @@ app.get("/posts/:postid/:userid", (req, res) => {
 app.get("/user/:userid/:visitorid/profile", async (req, res) => {
     if (req.isAuthenticated()) {
         var usr, likedArr, psts;
-        await User.findOne({
+        User.findOne({
             _id: req.params.userid
         }, (err, user) => {
             if (err) {
@@ -398,6 +401,7 @@ app.get("/user/:userid/:visitorid/profile", async (req, res) => {
 
             }
         });
+
         setTimeout(() => {
             Post.find({
                 _id: {
@@ -410,19 +414,16 @@ app.get("/user/:userid/:visitorid/profile", async (req, res) => {
                     likedArr = liked;
                 }
             });
-            console.log(likedArr);
-
+            Post.find({
+                userID: usr._id
+            }, (err, posts) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    psts = posts;
+                }
+            });
         }, 500);
-
-        await Post.find({
-            userID: usr._id
-        }, (err, posts) => {
-            if (err) {
-                console.log(err);
-            } else {
-                psts = posts;
-            }
-        });
         setTimeout(() => {
             res.render("profile", {
                 user: usr,
@@ -523,7 +524,9 @@ app.post("/posts/:postid/:userid/like", async (req, res) => {
 app.post("/posts/:postid/:userid/comment", async (req, res) => {
     var route;
     var commentArr;
-    var today = new Date();
+    var today = new Date().toLocaleString(undefined, {
+        timeZone: 'Asia/Kolkata'
+    });;
     await Post.findOne({
             _id: req.params.postid,
         },
@@ -583,16 +586,24 @@ app.post("/posts/:userid/new", async (req, res) => {
                 usr = user.username;
             }
         });
-        const post = new Post({
-            title: req.body.title,
-            body: req.body.body,
-            author: usr,
-            likes: 0,
-            comments: [],
-            userID: req.params.userid,
+        var d = new Date().toLocaleString(undefined, {
+            timeZone: 'Asia/Kolkata'
         });
-        post.save();
-        res.redirect("/home");
+        setTimeout(() => {
+            const post = new Post({
+                title: req.body.title,
+                body: req.body.body,
+                author: usr,
+                date: d,
+                likes: 0,
+                comments: [],
+                userID: req.params.userid,
+            });
+
+            post.save();
+            res.redirect("/home");
+        }, 500);
+
     } else {
         res.redirect("/posts/" + req.params.userid + "/new");
     }
@@ -649,4 +660,3 @@ app.post("/login", (req, res) => {
         }
     });
 });
-
