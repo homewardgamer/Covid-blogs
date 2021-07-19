@@ -1,6 +1,6 @@
 # Covid-Blogs
 ## [Visit here](https://covid-blogs.herokuapp.com/)
-### A backend centric webApps that enables users to share their covid experience to the world.
+### A backend centric webApp that enables users to share their covid experience to the world.
 
 # How to run it locally?
 ### Clone the Repo `git clone https://github.com/homewardgamer/homewardgamer-WebD-Round2.git`
