@@ -69,4 +69,21 @@
  
  # Routes
  
+ ## `POST /login`
+ 
+ req 
+ * body
+    * required {username,password}
+ res
+ * body
+    * status :  201
+    * body  : none
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
