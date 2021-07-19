@@ -86,8 +86,7 @@
 ### `POST /register`
 
  req 
- * body
-    * required {username,password}
+ * body : {username,password}
 
 
  res
@@ -102,8 +101,8 @@
  
  key,value : 
  
- * sort = likesasc , likesdsc , commentasc , commentdsc , dateasc ,datedsc
- * filter = liked , today
+ * sort = {likesasc , likesdsc , commentasc , commentdsc , dateasc ,datedsc}
+ * filter = {liked , today}
  
  
  req 
