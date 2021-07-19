@@ -10,10 +10,10 @@
 ### NOTE : You have to set up a .env file in order to ensure proper functioning.
 
 # Features
-### * Create delete and edit your posts anytime.
-### *Comment and like other users posts.
-### *View other user's profile and see their posts and liked posts.
-### Login from google OAuth2.0
+* Create delete and edit your posts anytime.
+* Comment and like other users posts.
+* View other user's profile and see their posts and liked posts.
+* Login from google OAuth2.0
 ### Filter posts by posted today and liked posts
 ### Sort posts in ascending and descending order of date, comments and likes.
 ### Enabling sessions so no need to login everytime you visit until your browser is open.
