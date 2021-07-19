@@ -37,6 +37,15 @@
  
  # Post Schema
  
+ Key   | Value
+------ |--------
+Title  | String
+Body.  | String
+Author | String
+Likes  | String
+Comments
+ 
+ 
  <table>
   <tr>
     <td>Title</td>
