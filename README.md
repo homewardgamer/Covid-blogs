@@ -69,7 +69,7 @@
  
  # Routes
  
-
+ ## GET
  
  ### `GET /login`
  
@@ -82,7 +82,8 @@ res
 res
 * status : 201
 
- 
+---
+
  ### `GET /home?key=value`
  
  key,value : 
@@ -158,7 +159,7 @@ req
 * status : 201
 
 ---
-# POST
+## POST
 
  ### `POST /login`
  
