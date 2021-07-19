@@ -10,9 +10,9 @@
 ### NOTE : You have to set up a .env file in order to ensure proper functioning.
 
 # Features
-### Create delete and edit your posts anytime.
-### Comment and like other users posts.
-### View other user's profile and see their posts and liked posts.
+### * Create delete and edit your posts anytime.
+### *Comment and like other users posts.
+### *View other user's profile and see their posts and liked posts.
 ### Login from google OAuth2.0
 ### Filter posts by posted today and liked posts
 ### Sort posts in ascending and descending order of date, comments and likes.
@@ -36,16 +36,6 @@
  </table>
  
  # Post Schema
- 
- Key   | Value
------- |--------
-Title  | String
-Body.  | String
-Author | String
-Likes  | String
-Comments
- 
- 
  <table>
   <tr>
     <td>Title</td>
