@@ -3,7 +3,7 @@
 ### A backend centric webApp that enables users to share their covid experience to the world.
 
 # How to run it locally?
-### Clone the Repo `git clone https://github.com/homewardgamer/homewardgamer-WebD-Round2.git`
+### Clone the Repo `git clone (repo_link)`
 ### Use `npm install` to install all the dependencies
 ### Run the command `node app.js`
 ### The server will be running at [localhost:3000](https://localhost:3000)
@@ -12,12 +12,12 @@
 # Features
 * ### Create delete and edit your posts anytime.
 * ### Comment and like other users posts.
-* ### View other user's profile and see their posts and liked posts.
-* ### Login from google OAuth2.0
+* ### Visit other user's profile and see their posts and liked posts.
+* ### Login from Google OAuth2.0
 * ### Filter posts by posted today and liked posts
 * ### Sort posts in ascending and descending order of date, comments and likes.
-* ### Enabling sessions so no need to login everytime you visit until your browser is open.
-* ### hashing and salting is also implemented so your passwords are safe even in the database.
+* ### Enabling cookies & sessions so no need to login everytime you visit until your browser is open.
+* ### Hashing and salting is implemented to ensure passwords are safe even in the database.
 
 # User Schema 
 <table>
