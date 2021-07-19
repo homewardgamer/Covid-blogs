@@ -69,7 +69,7 @@
  
  # Routes
  
- ## `POST /login`
+ ### `POST /login`
  
  req 
  * body
@@ -79,11 +79,52 @@
  res
  * body
     * status :  201
-    * body  : none
+    * body  : {sessionToken , user}
+ 
+ ---
+ 
+### `POST /register`
+
+ req 
+ * body
+    * required {username,password}
+
+
+ res
+ * body
+    * status :  200
+    * body  : {sessionToken , user}
+
+
+ ---
+ 
+ ### `GET /home?key=value`
+ 
+ key,value : 
+ 
+ * sort = likesasc , likesdsc , commentasc , commentdsc , dateasc ,datedsc
+ * filter = liked , today
  
  
+ req 
+ * body {authenticated,user}
  
+ res
  
+ * body :  {posts , user}
+ * status : 201
+ 
+ ---
+ 
+ ### `GET /posts/:userid/new`
+ 
+ res
+ * body : {user}
+ * status : 201
+
+---
+
+### `GET`
  
  
  
