@@ -3,7 +3,7 @@
 ### A backend centric webApp that enables users to share their covid experience to the world.
 
 # How to run it locally?
-### Clone the Repo `git clone (repo_link)`
+### Clone the Repo `git clone <repo_link>`
 ### Use `npm install` to install all the dependencies
 ### Run the command `node app.js`
 ### The server will be running at [localhost:3000](https://localhost:3000)
