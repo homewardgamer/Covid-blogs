@@ -69,6 +69,97 @@
  
  # Routes
  
+
+ 
+ ### `GET /login`
+ 
+res
+* status : 201
+
+---
+ ### `GET /register`
+ 
+res
+* status : 201
+
+ 
+ ### `GET /home?key=value`
+ 
+ key,value : 
+ 
+ * sort = {likesasc , likesdsc , commentasc , commentdsc , dateasc ,datedsc}
+ * filter = {liked , today}
+ 
+ 
+ req 
+ * body {isAuthenticated(),user}
+ 
+ res
+ 
+ * body :  {posts , user}
+ * status : 201
+ 
+ ---
+ 
+ ### `GET /posts/:userid/new`
+ 
+ res
+ * body : {user}
+ * status : 201
+
+---
+
+### `GET /posts/:userid/myposts`
+
+req
+* body : {isAuthenticated(),params = userid}
+
+req
+
+* body : {posts,userid}
+* status : 201
+
+---
+### `GET /posts/:postid/:userid`
+
+req
+* body : {isAuthenticated()}
+* params : {userid , postid}
+
+req
+
+* body : {post,userid}
+* status : 201
+
+---
+
+### `GET /user/:userid/:visitorid/profile`
+
+req
+* body : {isAuthenticated()}
+* params : userid , visitorid
+
+req
+
+* body : {user, likedPostsArr , visitorid , posts }
+* status : 201
+
+---
+
+### `GET /posts/:userid/:postid/edit`
+
+req
+* body : {isAuthenticated()
+* params : {userid , postid}
+
+req
+
+* body : {post,userid}
+* status : 201
+
+---
+# POST
+
  ### `POST /login`
  
  req 
@@ -96,36 +187,73 @@
 
 
  ---
+
+### `POST /posts/:postid/:userid/like`
+
+req
+* params : {postid,userid}
+
+res
+* status : 200
+
+function : increases the likesCount by one and adds the postid to user's likedPosts ,if postid is not in user's likedPosts.
+
+---
+### `POST /posts/:postid/:userid/comment`
+
+req
+* params : {postid,userid}
+* body : {comment}
+
+res
+* status : 200
+
+function : pushes the comment in the Post's comments Array.
+
+---
+### `POST /posts/:postid/edit`
+
+req
+* params : {postid}
+* body : {isAuthenticated(), title , body}
+
+res
+* status : 200
+
+function : updates the post with the title and the body.
  
- ### `GET /home?key=value`
- 
- key,value : 
- 
- * sort = {likesasc , likesdsc , commentasc , commentdsc , dateasc ,datedsc}
- * filter = {liked , today}
- 
- 
- req 
- * body {authenticated,user}
- 
- res
- 
- * body :  {posts , user}
- * status : 201
- 
- ---
- 
- ### `GET /posts/:userid/new`
- 
- res
- * body : {user}
- * status : 201
+---
+
+### `POST /posts/:userid/new`
+
+req
+* params : {userid}
+* body : {title,body}
+
+res
+* status : 200
+
+function : adds new post to the database
+
+---
+### `POST /posts/:postid/delete`
+
+req 
+* params : {postid}
+* body : {isAuthenticated()}
+
+res
+* status : 200
+
+function : removes post from  the database
 
 ---
 
-### `GET`
- 
- 
+
+
+
+
+
  
  
  
